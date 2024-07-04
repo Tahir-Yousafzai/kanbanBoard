@@ -1,0 +1,8 @@
+.navbar button a{
+text-decoration: none;
+color: #198754;
+}
+.navbar button :hover{
+text-decoration: none;
+color: #fff;
+}
