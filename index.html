@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="bootstrape.css">
     <link rel="stylesheet" href="style.css">
     <title>Kanban Board</title>
@@ -16,16 +17,63 @@
         <div class="container-fluid">
             <a class="navbar-brand" id="loginTitle"></a>
             <form class="d-flex" role="search">
-               <a href="signupForm.html"> <button class="btn btn-outline-success me-3" type="submit">Sign Up</button></a>
-                <button class="btn btn-outline-success" type="submit"><a href="LoginForm.html">Login</a></button>
+                <button class="btn btn-outline-success" id="logout" type="submit"><a href="LoginForm.html">Log
+                        Out</a></button>
             </form>
         </div>
     </nav>
 
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="todoBox">
+                    <div class="card shadow p-4">
+                        <h3 class="card-title text-center mb-4">TODO LIST</h3>
+                        <div id="addTodoButtonGroup" class="btn-group mb-3">
+                            <button class="btn btn-success" onclick="showForm()"><i class="fa-solid fa-pen"></i> Add
+                                ToDo</button>
+                            <button class="btn btn-danger" onclick="deleteall()"><i class="fa-solid fa-trash"></i>
+                                Delete All</button>
+                        </div>
+                        <div id="todoForm" style="display: none;">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Project Name" id="projectName">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Description" id="description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="datetime-local" class="form-control" id="deadline">
+                                <div id="deadlineError" class="error"></div>
+                            </div>
+                            <button class="btn btn-primary" onclick="addtodo()">Add</button>
+                        </div>
+                        <ul id="list" class="list-group" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+                        <div id="status" class="status pending">Status: Pending</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="inprogressBox">
+                    <h3 class="text-center mb-4">IN PROGRESS</h3>
+                    <ul id="inProgressList" class="list-group" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+                    <div id="statusInProgress" class="status inprogress">Status: In Progress</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="completeBox">
+                    <h3 class="text-center mb-4">COMPLETED</h3>
+                    <ul id="completeList" class="list-group" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+                    <div id="statusComplete" class="status complete">Status: Complete</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-
-
+    <script src="app.js"></script>
+    <script src="logout.js"></script>
+    <script src="https://kit.fontawesome.com/69050aab87.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

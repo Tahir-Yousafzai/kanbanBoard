@@ -1,8 +1,52 @@
-.navbar button a{
-text-decoration: none;
-color: #198754;
+.card {
+    max-width: 600px;
+    margin: auto;
 }
-.navbar button :hover{
-text-decoration: none;
-color: #fff;
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group-append button {
+    display: flex;
+    align-items: center;
+}
+
+.error {
+    color: red;
+    font-size: 0.875rem;
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.status.pending {
+    color: red;
+}
+
+.status.inprogress {
+    color: yellow;
+}
+
+.status.complete {
+    color: green;
+}
+
+.list-group {
+    min-height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.dragging {
+    opacity: 0.5;
 }
